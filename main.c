@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <time.h>
 #include "tool.h"
@@ -6,7 +7,7 @@
 void main() {
 	int menu, n;
 	int* arr;
-	char *alg[5] = { "Exchange sort", "Merge sort", "Quick sort", "Heap sort", "Radix sort" };
+	char* alg[5] = { "Exchange sort", "Merge sort", "Quick sort", "Heap sort", "Radix sort" };
 	clock_t start = 0, end = 0;
 
 	printf("Size of data(100/500/1000/5000/10000) : ");
@@ -34,26 +35,26 @@ void main() {
 	}
 	else if (menu == 2) {
 		start = checkTime();
-		mergeSort(arr, n);
+		mergeSort(arr, 0, n - 1);
 		printArray(arr, n);
 		end = checkTime();
 		printf("\n%s ", alg[1]);
 	}
 	else if (menu == 3) {
 		start = checkTime();
-		quickSort(arr, n);
+		quickSort(arr, 0, n - 1);
 		printArray(arr, n);
 		end = checkTime();
 		printf("\n%s ", alg[2]);
 	}
-  else if (menu == 4) {
+	else if (menu == 4) {
 		start = checkTime();
 		heapSort(arr, n);
 		printArray(arr, n);
 		end = checkTime();
 		printf("\n%s ", alg[3]);
 	}
-  else if (menu == 5) {
+	else if (menu == 5) {
 		start = checkTime();
 		radixSort(arr, n);
 		printArray(arr, n);
