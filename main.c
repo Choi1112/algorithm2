@@ -27,7 +27,7 @@ void main() {
 	printf("Result\n");
 	if (menu == 1) {
 		start = checkTime();
-		excangeSort(arr, n);
+		exchangeSort(arr, n);
 		printArray(arr, n);
 		end = checkTime();
 		printf("\n%s ", alg[0]);
